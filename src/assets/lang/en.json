@@ -1,0 +1,139 @@
+{
+  "lang_key": "EN Translation",
+
+   "all_pages": {
+    "text_next": "Next",
+    "text_back" : "Back",
+    "text_close" : "Close",
+    "next_step": "Next Step",
+    "text_cancel": "Cancel"
+  },
+ 
+  "login": {
+    "title": "Login",
+    "req_bankid" : "Please enter valid BankID number!",
+    "req_pass": "Please enter valid Login and Password!",
+    "bankid_disabled": "This feature is temporarily disabled",
+    "link_to_passform": "Do not have BankID? Alternate login",
+    "link_to_bankid": "Login via BankID form",
+    "remember": "Remember me",
+    "login_btn": "Log In",
+    "holder_bankid": "Person number",
+    "holder_username": "Enter Login",
+    "holder_pass": "Your Password",
+    "not_registered": "Not yet registered user?",
+    "hide_window": " Back ",
+    "header_text_unregistered": "Text about user registration",
+    "text_unregistered": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "header_update_app": "You need to update the app version!",
+    "text_update_app": "The version of this app is out of date. You need to update your App from AppStore or Google Play",
+    "bankIdAppNotFound":"BankId App Not Found",
+    "bankIdServerError":"There was a Server Error",
+    "bankIdLaunchError":"BankId Launch Error",
+    "bankIdLoginError":"BankId Login Error"
+   },
+  
+ 
+  "home": {
+    "title": "Welcome",
+    "error_load_notif": "Error loading notifications"
+  },
+  
+  "select_patient": {
+    "title": "Select Patient",
+    "no_patients_message": "Sorry, you do not have access to any patients. Contact your provider for more information",
+    "address_not_selected": "Address not selected"
+  },
+  
+  "orders-list": {
+    "title": "Services"
+  }, "order": {
+    "page_order": "Order",
+    "page_cancel": "Cancel",
+    "enter_time": "Please enter visit time!",
+    "enter_date": "Please enter visit date!",
+    "cancel_order": "Cancel Order"
+  },
+  
+  "document": {
+    "title": "Document"
+  },
+   
+  "confirm": {
+    "title": "Please Confirm",
+    "order_saved": "Your request was successfully saved",
+    "text_payment" : "On the next page there will be a safe payment for this order through the payment service. Carefully check all the details of your order!",
+    "text_confirm": "Please check and confirm the order of this service or product:",
+    "order_price" : "Total amount"
+  },
+  
+   "settings": {
+    "title": "Settings",
+    "personal_data": "Personal data",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "city": "Your City",
+    "address": "Address",
+    "email": "E-mail",
+    "phone": "Phone",
+    "language": "Language",
+    "password": "Password",
+    "password_old": "Input Old Password",
+    "password_new": "Input New Password",
+    "password_repeat": "Repeat Password",
+    "upload_photo": "upload  photo",
+    "choose_photo": "Choose a Photo from Library",
+    "payment_info": "payment info",
+    "save_profile": "Save Profile"
+  },
+  
+  "diary": {
+    "title": "Diary"
+  },
+  
+  "messages": {
+    "title": "Messages",
+    "type_your_message": "Type your message here"
+  }, 
+  
+  "documents-list": {
+    "title": "Documents List",
+    "back_orders": "Back to Orders", 
+    "status_1": "Status: Created",
+    "status_2": "Status: Paid",
+    "status_3": "Status: Processed",
+    "status_4": "Status: Delivered",
+    "status_5": "Status: Cancelled",  
+    "read_document": "Read Document"
+  },
+   
+  
+  "payment": {
+    "title": "Payment",
+    "payment_success": "Your order has been paid successfully.",
+    "close_page": "Close",
+    "cancel_order": "Cancel Order",
+    "try_payment": "Try again",
+    "error_payment": "An error occurred while paying your order. Please check the correctness of the data entered!"
+  },
+
+  "help_page":{
+    "title":"[EN]Help title",
+    "header":"[EN]Help header",
+    "page_desc":"[EN]this is the help content <p>in paragraphs!</p>"
+  },
+
+  "about_page":{
+    "title":"[EN]About title",
+    "header":"[EN]About header",
+    "page_desc":"[EN]this is the About content <p>in paragraphs!</p>"
+  },
+
+  "internet-down":{
+    "content":"(EN)It seems that you have a problem connecting to internet. Make sure that your phone is connected, then click refresh.",
+    "header":"(EN)No Internet",
+    "refresh":"(EN)Refresh",
+    "title":"(EN)No Internet"
+  }
+ 	
+}

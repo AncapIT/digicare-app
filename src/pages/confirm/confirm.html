@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{ title }} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    
+    <h3> {{ order_title }} </h3>
+    
+	<div class="text_block"> 
+		 {{ 'confirm.text_confirm' | translate }}    
+	</div>
+  
+  
+<ion-grid class="confirm_table">
+
+	<ion-row   *ngFor="let item of order_data; ">
+		<ion-col text-left class="confirm_title"> 
+			<ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+			{{ item.title }}
+		</ion-col>
+		<ion-col text-right class="confirm_value"> 
+		   {{ item.selected }} 
+		</ion-col>
+	</ion-row>
+	  
+ 
+</ion-grid>	
+	
+ 
+ <div class="text_block" *ngIf=" order_price > 0 "> 
+    {{ 'confirm.text_payment' | translate }} 
+ </div>
+ 
+ <div id="payment_logos" *ngIf=" order_price > 0 "> 
+	 <img src="./assets/imgs/visa-mastercard-amex.png"/>
+	 <br/>
+	 <span id="price_amount"> {{ 'confirm.order_price' | translate }}: 
+	 		<span *ngIf=" currency_place == 'before' ">{{ currency }} {{ order_price }}</span>
+	 		<span *ngIf=" currency_place == 'after' " >{{ order_price }} {{ currency }}</span>	
+	 </span>
+ </div> 
+ 
+	 <button color="secondary" block ion-button tappable (click)="next_step();" >
+			{{ 'all_pages.next_step' | translate }}		 
+	 </button>
+	 <button color="danger" block ion-button tappable (click)="cancel_order();" >
+			{{ 'all_pages.text_cancel' | translate }}	 	 
+	 </button> 
+	 
+</ion-content>

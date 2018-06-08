@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{title}} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>  
+  
+  <!--  ------------------------------ CONTAINER FOR DETAILS ------------------------------ --> 
+  
+  <div>
+	  	<p class="news_date_details" *ngIf=" news_date != '' && news_date != '0000-00-00 00:00:00' "> {{news_date}}</p>
+	  	<h3 *ngIf=" header != '' "> {{header}} </h3>
+	   
+	   <ion-grid class="about_info" *ngIf=" show_user_block  ">
+			<ion-row>
+				<ion-col col-4 text-left> 
+					 <img src="{{image_path}}/{{patient_photo}}" class="rounded_photo">
+				</ion-col>
+				<ion-col col-8 text-left > 
+				
+				   <p *ngIf=" patient_name != ''  &&  patient_name !== undefined " class="grey_title">
+					   <ion-icon name="ios-arrow-dropright-circle" item-start color="secondary" class="list_icon"></ion-icon> {{ patient_name }} 
+				   </p>
+				   <p *ngIf=" patient_address != ''  &&  patient_address !== undefined " class="blue_title">
+					   <ion-icon name="ios-arrow-dropright-circle" item-start color="secondary" class="list_icon"></ion-icon> {{ patient_address }} 
+				   </p>
+				   <p *ngIf=" patient_email != ''  &&  patient_email !== undefined " class="blue_title">
+					   <ion-icon name="ios-arrow-dropright-circle" item-start color="secondary" class="list_icon"></ion-icon> {{ patient_email }} 
+				   </p>
+				   <p *ngIf=" patient_phone != ''  &&  patient_phone !== undefined " class="blue_title">
+					   <ion-icon name="ios-arrow-dropright-circle" item-start color="secondary" class="list_icon"></ion-icon> {{ patient_phone }} 
+				   </p> 
+				    
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+		
+	  	<div class="news_big_image" *ngIf=" big_image != 'undefined' && big_image != ''  && big_image !== undefined  " >
+		  	<img *ngIf="docType!='about_page'" src="{{img_folder}}/{{big_image}}">
+		  	<img *ngIf="docType=='about_page'" src="assets/imgs/carelink-smiley.png" style="width: 9.5rem;height: 8.5rem;border:none;">
+		</div>
+	  	
+	  	<div class="text_block" [innerHTML]="page_desc"></div>
+	  	  
+  </div>	  
+
+
+</ion-content>

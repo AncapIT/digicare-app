@@ -1,0 +1,138 @@
+{
+  "lang_key": "SE Translation",
+
+   "all_pages": {
+    "text_next": "Nästa",
+    "text_back" : "Bakåt",
+    "text_close" : "Stäng",
+    "next_step": "Gå vidare",
+    "text_cancel": "Avbryt"
+  },
+ 
+  "login": {
+    "title": "Login",
+    "req_bankid" : "Du måste ange ett giltigt personnummer",
+    "req_pass": "Ogilitgt användarnamn eller lösenord.",
+    "bankid_disabled": "Den här funktionen är tillfälligt otillgänglig",
+    "link_to_passform": "Logga in med användarnamn och lösenord",
+    "link_to_bankid": "Logga in med BankID",
+    "remember": "Kom ihåg mig",
+    "login_btn": "Logga in",
+    "holder_bankid": "ÅÅÅÅMMDDNNNN",
+    "holder_username": "Användarnamn",
+    "holder_pass": "Lösenord",
+    "not_registered": "Ännu inte registrerad som användare?",
+    "hide_window": " Bakåt ",
+    "header_text_unregistered": "Förbättrad kommunikation och delaktighet för anhöriga i äldreomsorgen",
+    "text_unregistered": "DigiCare erbjuds genom din utförare i äldreomsorgen - kommunal eller privat. <p>Fråga din utförare om de erbjuder DigiCare och be dem annars att kontakta oss så hjälper vi dem att komma igång så att du som anhörig eller brukare får tillgång till ett komplett anhörigstöd.<br/> Du kan även kontakta oss direkt på DigiCare, ange då vilken utförare det gäller och eventuell kontaktperson. </p><p> Våra kontaktuppgifter: www.ancap.in eller info@ancap.in </p><p> DigiCare ger ökad delaktighet, trygghet och kvalitet i äldreomsorgen genom förenklad och förbättrad kommunikation mellan brukare, anhöriga och utförare. Snabbt tillgängligt direkt i mobilen. </p><p> - Ökad delaktighet i den närståendes dagliga liv<br/> - Underlättar kommunikationen med äldreomsorgen<br/> - Alla inblandade - anhöriga, brukare, personal - har tillgång till all relevant information på en plats<br/> - Lätt att boka och avboka hemtjänst, ledsagning m.m.<br/> - Enkelt att få hjälp med tilläggstjänster </p> ",
+    "header_update_app": "Du måste uppdatera din app",
+    "text_update_app": "Den här versionen av appen behöver uppdateras. Gå till Apple AppStore eller Google Play för att uppdatera.",
+    "bankIdAppNotFound":"Kunde inte öppna BankID-appen",
+    "bankIdServerError":"BankID: Serverfel",
+    "bankIdLaunchError":"Fel när BankID skulle startas",
+    "bankIdLoginError":"Kunde inte logga in med BankID"
+   },
+  
+ 
+  "home": {
+    "title": "Välkommen",
+    "error_load_notif": "Fel när notifieringar skulle laddas"
+  },
+  
+  "select_patient": {
+    "title": "Välj brukare",
+    "no_patients_message": "Du har inte tillgång till någon brukare. Kontakta din utförare för mer information",
+    "address_not_selected": "Ingen adress angiven"
+  },
+  
+  "orders-list": {
+    "title": "Tjänster"
+  }, "order": {
+    "page_order": "Beställning",
+    "page_cancel": "Avbryt",
+    "enter_time": "Ange tid",
+    "enter_date": "Ange datum",
+    "cancel_order": "Avbryt beställning"
+  },
+  
+  "document": {
+    "title": "Dokument"
+  },
+   
+  "confirm": {
+    "title": "Bekräfta",
+    "order_saved": "Din beställning har skickats",
+    "text_payment" : "På nästa sida kommer du att betala för beställningen. Kontrollera din beställning innan du går vidare till betalning.",
+    "text_confirm": "Kontrollera och bekräfta beställningen:",
+    "order_price" : "Total"
+  },
+  
+   "settings": {
+    "title": "Inställningar",
+    "personal_data": "Personligt",
+    "first_name": "Förnamn",
+    "last_name": "Efternamn",
+    "city": "Ort",
+    "address": "Gatuadress",
+    "email": "Epost",
+    "phone": "Telefon",
+    "language": "Språk",
+    "password": "Lösenord",
+    "password_old": "Nuvarande lösenord",
+    "password_new": "Nytt lösenord",
+    "password_repeat": "Upprepa lösenord",
+    "upload_photo": "Ladda upp foto",
+    "choose_photo": "Välj foto från biblioteket",
+    "payment_info": "Betalningsinformation",
+    "save_profile": "Spara profil"
+  },
+  
+  "diary": {
+    "title": "Dagbok"
+  },
+  
+  "messages": {
+    "title": "Meddelanden",
+    "type_your_message": "Skriv ditt meddelande här"
+  },
+  
+  "documents-list": {
+    "title": "Dokumentöversikt",
+    "back_orders": "Tillbaka till beställningar",
+    "status_1": "Status: Skapad",
+    "status_2": "Status: Betald",
+    "status_3": "Status: Behandlad",
+    "status_4": "Status: Levererad",
+    "status_5": "Status: Avbeställd", 
+    "read_document": "Läs dokument"
+  },
+  
+  "payment":  {
+    "title": "Betalning",
+    "payment_success": "Din beställning är nu betald.",
+    "close_page": "Stäng",
+    "cancel_order": "Avbeställ",
+    "try_payment": "Försök igen",
+    "error_payment": "Ett fel inträffade vid betalningen. Kontrollera att du skrivit in rätt uppgifter."
+  },
+
+  "help_page":{
+    "title":"Hjälp",
+    "header":"Hjälp",
+    "page_desc":"För hjälp med DigiCare ska du i första hand vända dig till din utförare som vet hur DigiCare används hos dem och vilka moduler som är tillgängliga. Om utföraren inte kan lösa ditt problem kan de i sin tur vända sig till DigiCares support, tyvärr tillhandahåller vi inte support direkt till slutanvändare.</p><p>www.DigiCareApp.com</p>"
+  },
+
+  "about_page":{
+    "title":"Om DigiCare",
+    "header":"Förbättrad kommunikation och delaktighet för anhöriga i äldreomsorgen",
+    "page_desc":"<p>DigiCare erbjuds genom din utförare i äldreomsorgen.</p><p> DigiCare ger ökad delaktighet, trygghet och kvalitet i äldreomsorgen genom förenklad och förbättrad kommunikation mellan brukare, anhöriga och utförare. Snabbt tillgängligt direkt i mobilen. </p><p> - Ökad delaktighet i den närståendes dagliga liv<br/> - Underlättar kommunikationen med äldreomsorgen<br/> - Alla inblandade - anhöriga, brukare, personal - har tillgång till all relevant information på en plats<br/> - Lätt att boka och avboka hemtjänst, ledsagning m.m.<br/> - Enkelt att få hjälp med tilläggstjänster </p><p>Det kan vara så att samtliga DigiCares moduler inte finns tillgängliga från din utförare.</p> "
+  },
+
+  "internet-down":{
+    "content":"Det är problem med din internetanslutning. Kontrollera anslutningen och försök igen.",
+    "header":"Ingen anslutning",
+    "refresh":"Försök igen",
+    "title":"Ingen anslutning"
+  }
+ 	
+}

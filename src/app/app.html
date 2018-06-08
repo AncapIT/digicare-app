@@ -1,0 +1,25 @@
+<ion-menu [content]="content" id="leftmenu" persistent="true">
+  
+  <ion-header>
+      
+      <div id="menu_provider_logo"> 
+	      <img *ngIf=" menu_logo !== undefined  && menu_logo != '' && menu_logo != 'undefined' "  src="{{ menu_logo }}"/> 
+	   </div> 
+	  
+  </ion-header>
+ <br/><br/> 
+ 
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" color="light">
+        <ion-icon name="{{p.icon}}" color="light" item-start></ion-icon>
+        <span *ngIf=" user_lang == 'en' ">{{p.title_en}}</span>
+        <span *ngIf=" user_lang == 'se' ">{{p.title_se}}</span> 
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

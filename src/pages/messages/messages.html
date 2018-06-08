@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>  {{title}} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+ 
+<ion-content #content  class="chat-room">
+  	 
+	<div *ngFor="let message of messages; let last = last" class="message-box">
+		
+			<div  class="message-wrapper" [class.right]="( message.user_type === 'user' )" [class.left]="( message.user_type !== 'agent' )">
+				<div class="message-avatar">
+					
+            		<img [ngClass]="{'right': ( message.user_type === 'user' ) }" *ngIf=" message.user_type === 'user'  "
+            		 src="{{user_image_path}}/{{message.user_photo}}" >
+					 
+				    <img [ngClass]="{'left': ( message.user_type === 'agent' ) }"  *ngIf=" message.user_type === 'agent' " 
+				    src="{{user_image_path}}/{{message.user_photo}}">
+					 
+				</div>
+
+				<div class="message-user">{{ message.user_name }}</div> 
+				 
+				<div class="message-content">
+					
+					<div class="media-container"  *ngIf=" message.attachment_url !== '' ">
+						<img src="{{chat_img_path}}/{{message.attachment_url}}"  >
+					</div>
+					
+					<span class="message-content-text"> {{message.messageText}}
+						<span class="message-timestamp" [innerHTML]=" message.time "></span>
+					</span>
+				 
+				</div>
+			 </div>
+			<!--{{last ? scrollToBottom() : ''}}-->
+	</div>
+
+
+</ion-content>
+
+<ion-footer >
+	<ion-toolbar class="messages-page-footer" position="bottom">
+		
+		<ion-buttons start>
+			<button ion-button round grey class="message-editor-button" id="attachment_btn" *ngIf="isApp" tappable (click)="openGallery()">
+				<ion-icon name="md-attach"></ion-icon>
+			</button>
+			
+			<label *ngIf="!isApp" for="file" class="files_input_label">
+			<button ion-button round grey class="message-editor-button" id="attachment_btn">
+				<ion-icon name="md-attach"></ion-icon>
+				<input type="file" name="file" id="file"  (change)="fileChanged($event)" class="hidden_files_input" accept="image/jpg">
+			</button>
+			</label>
+			
+			
+			
+		</ion-buttons>
+		 
+		<ion-textarea  defaultHeight="41" defaultPixelsToGrow="12" defaultLinesToGrow="6"
+		 class="message-editor"  placeholder="{{ 'messages.type_your_message' | translate }}" [(ngModel)]="messageText"></ion-textarea>
+ 
+		<ion-buttons end>
+			<button ion-button round secondary class="message-editor-button" tappable (click)="sendMessage(messageText)">
+				<ion-icon name="md-send"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-footer>
+
+ 

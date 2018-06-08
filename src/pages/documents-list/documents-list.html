@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{title}} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding> 
+	 
+	 
+  <!--  ------------------------------ CONTAINER FOR LIST MODE ------------------------------ --> 
+    
+ 	<div *ngIf="!view_order_mode">
+	
+	<h3 *ngIf=" header != ''  &&  header !== undefined "> {{header}} </h3>
+ 
+		
+	<div class="text_block" *ngIf=" page_desc != '' &&  page_desc !== undefined " [innerHTML]="page_desc">  </div>
+	 	
+	<ion-list  class="transp_gradient" color="secondary" >
+		<ion-item tappable *ngFor="let doc of docs_items" (click)="open_page_details(  doc.item_id );">
+		    <ion-avatar item-start *ngIf=" doc.image != '' && doc.image !== undefined  "> <img src="{{news_image_path}}/{{doc.image}}"> </ion-avatar>
+		    <p *ngIf=" doc.item_date != '' && doc.item_date !== undefined  ">Date: {{doc.item_date}}</p>
+		    <h2>{{doc.item_title}}</h2>
+		</ion-item>  
+	</ion-list>
+	
+	
+	<ion-list  class="transp_gradient" color="secondary" *ngIf="show_orders" >
+		<ion-item tappable *ngFor="let order of orders" 
+		(click)="open_order_view(  order.order_title, order.order_status, order.create_date, order.price   );">
+		
+		    <ion-avatar item-start *ngIf=" patient_photo != '' && patient_photo !== undefined  "> <img src="{{image_path}}/{{patient_photo}}"> </ion-avatar>
+		    <p *ngIf=" order.create_date != '' && order.create_date !== undefined  ">Created: {{order.create_date}}</p>
+		    <h2>{{order.order_title}}</h2> 
+		    <span *ngIf=" order.order_status == 0 " class="mini_text">{{ 'documents-list.status_1' | translate }} </span>
+		    <span *ngIf=" order.order_status == 1 " class="mini_text">{{ 'documents-list.status_2' | translate }} </span>
+		    <span *ngIf=" order.order_status == 3 " class="mini_text">{{ 'documents-list.status_3' | translate }} </span>
+		</ion-item>  
+	</ion-list>
+	
+
+    <button ion-button icon-start *ngIf=" pdf_link != ''  &&  pdf_link !== undefined " color="danger" block ion-button tappable  > 
+	  		<ion-icon name="md-clipboard"></ion-icon>{{ 'documents-list.read_document' | translate }} 
+	</button>  
+
+</div>
+
+
+
+
+
+
+
+  <!--  ------------------------------ CONTAINER FOR FAST ORDER VIEW MODE ------------------------------   --> 
+
+  
+<ion-grid class="confirm_table" *ngIf="view_order_mode">
+	
+	<h3> {{ view_order_title }}</h3>
+	
+	<ion-row>
+		<ion-col text-left class="confirm_title"> 
+			<ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+			Order Date 
+		</ion-col>
+		<ion-col text-right class="confirm_value"> 
+		   {{ view_visit_date }}
+		</ion-col>
+	</ion-row>
+	 
+	<ion-row *ngIf=" +view_price > 0  ">
+		<ion-col text-left class="confirm_title"> 
+			<ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+			Price 
+		</ion-col>
+		<ion-col text-right class="confirm_value"> 
+		  <ion-icon name="" item-end color="danger" id="price_text" > {{ view_price }} </ion-icon>
+		</ion-col>
+	</ion-row>
+ 
+	 
+	<button ion-button icon-start  color="danger" block ion-button tappable (click)=" view_order_mode = false; "  > 
+	  		<ion-icon name="ios-list"></ion-icon> {{ 'documents-list.back_orders' | translate }} 
+	</button> 
+	
+</ion-grid>	
+	
+</ion-content>

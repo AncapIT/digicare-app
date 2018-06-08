@@ -1,0 +1,214 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+
+h1 { color: #91a4ab; text-align: center; font-size: 16pt;  } 
+
+h2 { color: #00b5ff; text-align: left; font-size: 14pt;  } 
+
+ion-icon {
+    &[class*="carelink-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: cover;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="carelink-menu"] {
+        mask-image: url(../assets/icon/menu.svg);
+    } 
+    &[class*="carelink-diary"] {
+        mask-image: url(../assets/icon/diary.svg);
+    }
+    &[class*="carelink-orders"] {
+        mask-image: url(../assets/icon/orders.svg);
+    }
+    &[class*="carelink-messages"] {
+        mask-image: url(../assets/icon/messages.svg);
+    }
+    &[class*="carelink-food"] {
+        mask-image: url(../assets/icon/food.svg);
+    }
+    &[class*="carelink-lists"] {
+        mask-image: url(../assets/icon/lists.svg);
+    }
+    &[class*="carelink-accomp_order"] {
+        mask-image: url(../assets/icon/accomp_order.svg);
+    }
+    &[class*="carelink-accomp_cancel"] {
+        mask-image: url(../assets/icon/accomp_cancel.svg);
+    }
+    &[class*="carelink-medical"] {
+        mask-image: url(../assets/icon/medical.svg);
+    }
+    &[class*="carelink-cancel_visit"] {
+        mask-image: url(../assets/icon/cancel_visit.svg);
+    }
+    &[class*="carelink-footprint"] {
+        mask-image: url(../assets/icon/footprint.svg);
+    }
+    &[class*="carelink-sport"] {
+        mask-image: url(../assets/icon/sport.svg);
+    }
+    &[class*="carelink-massage"] {
+        mask-image: url(../assets/icon/massage.svg);
+    }
+    &[class*="carelink-care"] {
+        mask-image: url(../assets/icon/care.svg);
+    }
+    &[class*="carelink-dogs"] {
+        mask-image: url(../assets/icon/dogs.svg);
+    }
+    &[class*="carelink-promenad"] {
+        mask-image: url(../assets/icon/promenad.svg);
+    }
+    &[class*="carelink-cleaning"] {
+        mask-image: url(../assets/icon/cleaning.svg);
+    }
+    &[class*="carelink-snowman"] {
+        mask-image: url(../assets/icon/snowman.svg);
+    }
+    &[class*="carelink-qqqqqq"] {
+        mask-image: url(../assets/icon/qqqqqq.svg);
+    } 
+    
+    
+    
+} /* end custom icons  */
+
+
+
+
+
+// Big blue icons buttons 
+// --------------------------------------------------
+	
+	div.big_icons { 
+		height: 130px; 
+		@include blue_gradient();
+		border-radius: 6px; margin: 3px; 
+		width: 48%; margin: 1%; 
+		display: block;
+		float: left;  
+	} 
+	div.big_icons > div { 
+		height: 100%; width: 100%; display: block; 
+		background: url(../assets/imgs/gradient_round.png ); background-size: cover;  background-repeat: no-repeat; 
+		padding-top: 23px; 
+		color: #FFF; font-size: 11pt;
+		text-align: center;  
+		/* text-shadow: 0px 1px 1px rgba(86, 86, 86, 0.6); */
+		
+	}
+	
+	div.big_icons ion-icon { 
+		font-size: 40pt; 	
+		color: #FFF; text-align: center; margin: auto;  
+		
+	}
+	
+
+
+// Left menu options
+// --------------------------------------------------	
+	
+ion-menu#leftmenu { 
+	
+	ion-content.content {  @include blue_gradient();  }	
+	
+	div#menu_provider_logo { margin: auto; width: 100%; text-align: center; display: block;  border: #F00 0px solid; margin-top: 30px; margin-bottom: 50px;  }  
+	div#menu_provider_logo img { width:  140px; height: auto; text-align: center; margin: auto;   }	
+	
+	ion-list.list { padding-left: 30px; padding-right: 30px;  }	
+	ion-list .item { background-color: transparent;  }	
+	
+	ion-label { color: #FFF; font-weight: bold;  }
+	
+	.item-inner { border-bottom: none;   }
+	
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {  border-bottom: none;  }
+	
+	ion-header, .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before { background-image: none;  }
+	
+	ion-icon { color: #bfeafd;  }
+
+} 
+	
+.rounded_photo { border-radius: 50%; } 
+	
+
+// Navbar Back buttons for all pages
+// --------------------------------------------------
+ 
+ion-navbar { height: 55px; }
+
+ion-navbar { 
+	
+	button.topbar_menu_btn { font-size: 13pt; }
+	.toolbar-title-ios { color: #6b8089;    }
+	.back-button.show-back-button {   display: none;  }	
+	button.topbar_back_btn { font-size: 16pt; } 	
+	
+	.toolbar-background-ios, .toolbar-background { background: rgba(248, 248, 248, 0.5) }
+
+}
+
+.black_text { color: #000;  }
+
+// Settings elements for all pages
+// --------------------------------------------------
+ 
+ 
+div.text_block { 
+	 color: #5e5e5e; text-align: justify; font-size: 12pt;  padding: 15px; 
+}
+
+div#provider_logo { margin: auto; width: 100%; text-align: center; display: block;  border: #F00 0px solid;  }  
+div#provider_logo img { width:  140px; height: auto; text-align: center; margin: auto;   }	
+
+ion-list.transparent_list { 
+	ion-item,  .item-block:last-child,  .item-wrapper:last-child .item-block { background: transparent; border-bottom: none; border-top: none;  }
+}
+
+.text_link { color: #006db3; text-decoration: underline; } 
+
+ion-list.transp_gradient { 
+	
+	.item-ios, .item { background-color: transparent;  @include white_gradient();  }
+	.list_icon { font-size: 11pt; margin-top: 20px;   }
+	ion-textarea  { background: #fff;  padding-left: 10px;  margin-top: 10px;  margin-bottom: 10px; margin-right: 7px; color: 999; font-size: 12pt;   }
+	ion-label { color: #7a8f96; text-transform: uppercase;  }
+	ion-label i { color: #f53d3d; font-weight: bold;  }
+	/* div.datetime-text { color: #00b5ff;  } */
+}
+
+
+h3 { text-align: center;   color: #00b5ff; }
+
+
+ion-grid.confirm_table { 
+		.confirm_title { color: #91a4ab; font-weight: bold; font-size: 12pt; text-transform: uppercase;  }
+		.confirm_value { color: #01b5ff; font-weight: bold;   font-size: 12pt; text-transform: uppercase;   }
+		ion-icon { font-size: 10pt;   margin-right: 10px;  }
+		ion-row {  line-height: 35px; }
+	}	
+	
+.alert-ios .alert-title, .alert .alert-title  { text-align: center;  }
+  	 
+div.carelink_item_inner { 
+	
+	width: 100%; background: rgba(0, 0, 0, 0.3);  padding: 10px; text-align: center; color: #FFF;  
+	ion-list { background-color: #FFF; margin-top: 15px;   }
+}
+
+div.big_page_icon { width: 100%; display: block; text-align: center; padding: 15px;  }
+div.big_page_icon ion-icon { font-size: 70pt;  } 
+
+span.currency { font-size: 15pt;  } 
+	

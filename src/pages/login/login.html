@@ -1,0 +1,110 @@
+<ion-header>
+  
+</ion-header>
+
+<ion-content padding>
+
+<div class="text_block" text-center>
+	<img src="assets/imgs/carelink-smiley.png" id="logo">
+</div>
+
+<!-- ---------------------------------------------------------------------------- --> 
+<!-- ------------------------ FORM BANKID LOGIN ---------------- --> 
+<!-- ---------------------------------------------------------------------------- --> 
+
+<div class="text_block" id="login_form_bankid" *ngIf="bankid_mode && !text_window">
+
+	<ion-list class="login_fields">
+		<ion-item>
+		    <ion-input type="number" placeholder="{{ 'login.holder_bankid' | translate }}" [(ngModel)]="personNumber" text-left clearInput></ion-input>
+		</ion-item> 
+		 
+		<button color="primary" block ion-button icon-end id="bankid_logo" tappable (click)="bankIdLogin();">
+			{{ 'login.login_btn' | translate }}  <ion-icon name=""> <img src="./assets/imgs/bankid_logo.png"/></ion-icon>
+		</button>
+	</ion-list>
+	
+	<ion-list class="transparent_list"> 
+	  <ion-item>
+	    <ion-label> {{ 'login.remember' | translate }} </ion-label>
+	    <ion-toggle checked="false" [(ngModel)]="rememberMe_bankid"></ion-toggle>
+	  </ion-item>
+	</ion-list>
+    
+   <div tappable (click)="toggle_login('password');" class="text_link" id="toggle_password_login"> {{ 'login.link_to_passform' | translate }} </div>
+   <br/>
+   <div tappable (click)="show_text_message( 'show' );" class="text_link" > {{ 'login.not_registered' | translate }} </div> 
+ 	 	
+</div>
+
+
+
+
+<!-- ---------------------------------------------------------------------------- --> 
+<!-- ------------------------ FORM PASSWORD LOGIN ---------------- --> 
+<!-- ---------------------------------------------------------------------------- --> 
+ 
+ <div class="text_block" id="login_form_default" *ngIf="!bankid_mode && !text_window">
+
+	<ion-list class="login_fields">
+		<ion-item>
+		    <ion-input type="email" placeholder="{{ 'login.holder_username' | translate }}" [(ngModel)]="login" value="" name="login" text-left clearInput></ion-input>
+		</ion-item>
+		<ion-item>
+		    <ion-input type="password" placeholder="{{ 'login.holder_pass' | translate }}" [(ngModel)]="password" value=""  name="password" text-left clearInput></ion-input>
+		</ion-item> 
+		 
+		<button color="primary" block ion-button icon-end id="bankid_logo" tappable (click)="send_login();">
+			{{ 'login.login_btn' | translate }}   <ion-icon name="ios-contact"></ion-icon>
+		</button>
+	</ion-list>
+	
+	<ion-list class="transparent_list"> 
+	  <ion-item>
+	    <ion-label> {{ 'login.remember' | translate }} </ion-label>
+	    <ion-toggle checked="false" [(ngModel)]="rememberMe"></ion-toggle>
+	  </ion-item>
+	</ion-list>
+    
+   <div tappable (click)="toggle_login('bankid');" class="text_link" id="toggle_password_bankid">{{ 'login.link_to_bankid' | translate }}</div>
+  <br/>
+   <div tappable (click)="show_text_message( 'show' );" class="text_link" > {{ 'login.not_registered' | translate }} </div>  	
+</div>
+
+
+
+<!-- ---------------------------------------------------------------------------- --> 
+<!-- ------------------------ TEXT FOR UNREGISTERED USERS ---------------- --> 
+<!-- ---------------------------------------------------------------------------- --> 
+
+ <div class="text_block"  *ngIf="text_window">
+	 
+	 <div *ngIf="!app_version_message" > 
+		 
+	 <br/><br/><h1> {{ 'login.header_text_unregistered' | translate }}  </h1>
+	  
+	 <p [innerHTML]="'login.text_unregistered' | translate"></p> 
+	 <br/><br/>
+	 <button color="primary" block ion-button icon-end tappable (click)="show_text_message( 'hide' );">
+			{{ 'login.hide_window' | translate }}  
+	 </button>
+	 
+	 </div>
+	 
+	 <!-- ---------------------------------------------------------------------------- --> 
+	 
+	 <div *ngIf="app_version_message" >
+	  <br/><br/><h2> {{ 'login.header_update_app' | translate }}  </h2>
+ 
+		 <p [innerHTML]="'login.text_update_app' | translate"></p> 
+		 
+	 </div>	
+ </div>	 
+
+</ion-content>
+
+<ion-footer *ngIf="testServer">
+	<ion-toolbar position="bottom">
+		<p ion-text color="danger" text-center>Attention: Running on Test Server</p>
+	</ion-toolbar>
+</ion-footer>

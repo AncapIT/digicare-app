@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{ title }} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	
+ 	 
+	 	<!-- ---------------------------------- --> 
+	
+	<div *ngIf="!payment_success  && payment_process && !payment_error">
+		
+ 
+		 <br/><h1>Payment Process</h1> 
+		 
+		   <div id="card_block">
+		 
+				<form action="" method="POST" id="payment-form" (submit)="getToken( 'form' )">
+				  
+				  <br/>  
+				  
+				  <ion-list>
+					     <ion-input type="tel" placeholder="0000 0000 0000 0000"  [(ngModel)]="cardNumber" name="card-number"
+					      data-stripe="number"   maxlength="16" (ngModelChange)="validate_form( $event, 'cardNumber' )"  ></ion-input>
+					  
+					  	    <ion-grid>  
+							    <ion-row>
+								     	
+								     	<ion-col width-33> 
+								  		 	<ion-input placeholder="MM"  [(ngModel)]="expiryMonth" (ngModelChange)="validate_form( $event, 'expiryMonth' )"  
+								  		 	name="expiry-month" type="tel"  data-stripe="exp_month"  maxlength="2"  class="input_mini"  ></ion-input> 
+								  		</ion-col>
+								  		
+								  		<ion-col width-33> 
+								  		     <ion-input placeholder="YY" [(ngModel)]="expiryYear"  (ngModelChange)="validate_form( $event, 'expiryYear' )"  
+								  		     name="expiry-year" type="tel" size="2" data-stripe="exp_year"   maxlength="2"  class="input_mini"  ></ion-input> 
+								  		</ion-col>
+								  		
+								  		<ion-col width-33>
+								  			 <ion-input placeholder="CVC"  [(ngModel)]="cvc"  (ngModelChange)="validate_form( $event, 'cvc' )" 
+								  			  name="cvc" type="tel" size="4" data-stripe="cvc"   maxlength="3"  class="input_mini"  ></ion-input>
+										</ion-col>
+										
+							  	</ion-row>
+							  	 
+							</ion-grid>  
+				 
+					  
+		 			  		
+					</ion-list> 
+					
+					<button class="gradient_blue" ion-button full  type="submit" >Submit Payment</button>
+				</form>
+				 
+		   </div> 
+		   <img id="visa_mastercard" src="assets/imgs/visa-mastercard-amex.png">
+		   <hr/>
+					<ion-item id="pay_lock_icon">
+									<ion-icon name="md-lock"></ion-icon>  
+							  	 	 Your payment info is stored securely 
+					</ion-item>  
+					
+		 
+	 </div>	 
+	 
+ 
+ 
+ 
+ 
+ 
+ 	<!-- ---------------------------------- --> 
+	
+	<div *ngIf="payment_success  && !payment_process  && !payment_error" id="success_block">
+		
+ 
+		 <br/><h1>The order was paid successfully.</h1> 
+		<br> 
+		<ion-icon name="md-checkmark-circle-outline" color="primary"></ion-icon> 
+		<br><br>
+		<button color="danger" block ion-button tappable (click)="close_page( );" > {{ 'payment.close_page' | translate }}  </button>
+ 
+ 	</div> <!-- /. end window  -->
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	<!-- ---------------------------------- --> 
+	
+	<div *ngIf="!payment_success  && !payment_process && payment_error " id="error_block">
+		
+ 
+	    <h1>Payment error!</h1> 
+		<br> 
+		<p> An error occurred during the payment process </p>
+		<ion-icon name="md-alert" color="red"></ion-icon> 
+		<br>
+		<button color="primary" block ion-button tappable (click)=" payment_error = false; payment_process = true; payment_success = false; " > {{ 'payment.try_payment' | translate }}  </button>
+		<br>
+		<button color="danger" block ion-button tappable (click)="cancel_order( );" > {{ 'payment.cancel_order' | translate }}  </button>
+ 
+ 	</div> <!-- /. end window  -->
+
+ 	  
+		 			  
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{title}} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	<div class="text_block"> {{page_info}} </div>
+ 
+<br/>
+<div id="provider_logo"> 
+	<img *ngIf="provider_logo != '' && provider_logo != 'undefined' && provider_logo !== undefined " src="{{provider_image_path}}/{{provider_logo}}"/> 
+</div> 
+<br/><br/> 
+  
+ <div *ngFor="let page of pages" text-center class="big_icons" tappable  (click)="open_page( page.menu_link, page.menu_type );"> 
+	 <div> <ion-icon name="{{ page.menu_icon }}" color="light"></ion-icon><br/> <span [innerHTML]="page.menu_title"></span> </div> 
+ </div> 
+
+	 
+</ion-content>

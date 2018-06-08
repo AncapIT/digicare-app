@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title> {{ 'internet-down.title' | translate }} </ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+	<div>
+
+	    <h1>{{ 'internet-down.header' | translate }}</h1>
+		<br> 
+		<p> {{ 'internet-down.content' | translate }} </p>
+		<br>
+		<button color="primary" block ion-button tappable (click)="tryAgain()" > {{ 'internet-down.refresh' | translate }}  </button>
+ 	</div>
+
+</ion-content>

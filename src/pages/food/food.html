@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{title}} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    
+    <h1>Menu of the Week</h1>
+   
+	<div class="text_block"> 
+		Please select what you want to eat. All of our food is yummy  
+	</div>
+	<br/>
+	
+	<!--  ------------------------------ DAY MENU ITEM  ------------------------------ --> 
+	<div  *ngFor="let day of food_menu">
+		
+		<h3> {{ day.day_title }}</h3>
+		<div class="text_block"> 
+		
+		 {{ day.day_desc }} 
+		 
+		<ion-list radio-group class="transp_gradient food_menu_day" color="secondary">
+			  
+			  <ion-item  *ngFor="let item of day.menu_list " >  
+			    <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+			    <ion-label>{{ item }}</ion-label>
+			    <ion-radio checked="false" value="Fish"></ion-radio>
+			  </ion-item>
+			 
+			  
+		</ion-list>
+		</div>
+	</div>
+	
+	
+	<!--  ------------------------------ DAY MENU ITEM  ------------------------------ --> 
+	
+	<h1>Comments</h1>
+	<div class="text_block"> 
+	Let us know if you any special requirements, allgeries etc. 
+	</div>
+	<br/><br/>
+	<ion-list class="transp_gradient">
+		<ion-item>
+				   <ion-textarea placeholder="Please enter text your comment here..."></ion-textarea>
+		</ion-item>
+	</ion-list>
+	
+	
+	
+	
+	<button color="secondary" block ion-button tappable (click)="save_menu();"  >
+			Save Menu	 
+	</button>
+	 
+	 
+</ion-content>

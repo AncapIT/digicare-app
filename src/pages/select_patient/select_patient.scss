@@ -1,0 +1,36 @@
+page-select_patient {
+	
+	.select_patient_list { 
+	    .item-block:first-child { border-top: none;  }	
+		.item-ios, .item { background-color: #ffffff73;   }
+		button  {  margin-bottom: 5px;  }
+		
+		.person_name { color: #91a4ab; font-weight: bold;  }
+		.person_address {  color: #00b5ff;  font-size: 11pt;   } 
+		ion-icon { font-size: 30pt;  }
+	}
+	
+	div.big_patients_photos { 
+		
+		min-height: 100px;  
+		margin: 3px; 
+		width: 48%; margin: 1%; 
+		display: block;
+		float: left;    
+		border-bottom: #CCC 1px solid;  
+		padding-bottom: 10px;
+		
+		img { width: 100px; height: 100px;    }
+	} 
+	
+	span#no_patients_message {
+		     
+		font-weight: bold;
+	    margin: auto;
+	    margin-top: 30px;
+	    text-align: center;
+	    padding: 20px;
+	    display: block;  
+	    }
+
+}

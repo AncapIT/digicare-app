@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+     
+     <!-- <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons> --> 
+
+    <ion-title> {{ title }}</ion-title>
+       
+    <!-- <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons> --> 
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+	<ion-searchbar
+	  [(ngModel)]="myInput"
+	  [showCancelButton]="shouldShowCancel"
+	  (ionInput)="onInput($event)"
+	  (ionCancel)="onCancel($event)">
+	</ion-searchbar>
+	
+	<span id="no_patients_message" *ngIf="this.isDataFetched && no_patients">{{ 'select_patient.no_patients_message' | translate }}   </span>
+	
+	 <!--  ------------------------------ CONTAINER FOR LIST VIEW PATIENTS ------------------------------ --> 
+	
+	<div class="text_block" *ngIf="list_mode"> 
+		<ion-list class="select_patient_list">
+	      <button  ion-item *ngFor="let p of patients"  tappable (click)="open_Patient( p.patient_id )" >
+	        <ion-icon name="ios-contact" color="grey" item-start></ion-icon>
+	        <span class="person_name">{{p.first_name}} {{p.last_name}}</span><br/>
+	        <span class="person_address" *ngIf=" p.address != '' ">{{p.city}}, {{p.address}}</span>
+	        <span class="person_address" *ngIf=" p.address === '' || !p.address  " > {{ 'select_patient.address_not_selected' | translate }}  </span>
+	        
+	      </button>  
+        </ion-list>
+	</div>
+	
+	
+	
+	<!--  ------------------------------ CONTAINER FOR  BLOCK VIEW PATIENTS ------------------------------ --> 
+	  
+	<div class="text_block select_patient_list" *ngIf="!list_mode"> 
+		<div text-center class="big_patients_photos" *ngFor="let p of patients"  tappable (click)="open_Patient( p.patient_id )" > 
+				  <img src="{{image_path}}/{{p.photo}}" class="rounded_photo"> <br/>
+				  <span class="person_name">{{p.first_name}} {{p.last_name}}</span><br/>
+				  <span class="person_address">{{p.address}}</span>
+				  <span class="person_address" *ngIf=" p.address === '' || !p.address  " > {{ 'select_patient.address_not_selected' | translate }}  </span>
+		</div>
+	</div>
+	 
+</ion-content>

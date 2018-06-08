@@ -1,0 +1,120 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #006db3,
+  secondary:  #00b5ff,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  light_blue: #67d2ff,
+  grey: 	  #91a4ab,
+  red:		  #F00,
+);
+
+
+@mixin blue_gradient() { 
+	
+	    background: #007dff;
+		background: -moz-linear-gradient(top, #007dff 0%, #00b6ff 100%);
+		background: -webkit-linear-gradient(top, #007dff 0%,#00b6ff 100%);
+		background: linear-gradient(to bottom, #007dff 0%,#00b6ff 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007dff', endColorstr='#00b6ff',GradientType=0 );
+}
+    
+
+@mixin white_gradient() { 
+	    
+	    background: -moz-linear-gradient(top, rgba(255,255,255,0.5) 0%, rgba(192,206,211,0.6) 100%);
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0.5) 0%,rgba(192,206,211,0.6) 100%);
+		background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%,rgba(192,206,211,0.6) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#b3c0ced3',GradientType=0 );
+
+}
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Web Variables
+// --------------------------------------------------
+// Web only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+
+
+ion-content.content {  background-image: url(../assets/imgs/app_bg_clean.jpg); background-size: cover;   }
+
+@media screen and ( min-width: 1000px ) {
+  
+  
+
+}

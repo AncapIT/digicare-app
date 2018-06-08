@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button id="ava_btn" ion-button icon-only tappable (click)="open_page('about_patient', 'document' );">
+        <span id="ava_pic" *ngIf=" patient_photo != '' && patient_photo !== undefined  && patient_photo != 'undefined'  "> 
+        	<img src="{{image_path}}/{{patient_photo}}"/>
+        </span>
+      </button>
+    </ion-buttons>
+
+    <ion-title> 
+    	<span id="subtitle_1">{{ first_name }} {{ last_name }}</span><br/> <span id="subtitle_2">{{ address }}</span>
+    </ion-title>
+    
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="light">
+        <ion-icon name="carelink-menu" id="icon_menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    
+ <ion-list>
+ 
+  <ion-item class="white_list_item" *ngFor=" let p of  pushes ">
+	    <ion-icon name="ios-warning" color="danger" item-start *ngIf=" p.push_type == 'alert' "></ion-icon>
+	    <ion-icon name="md-information-circle" color="light_blue" item-start *ngIf=" p.push_type != 'alert' "></ion-icon> 
+	    
+	    <span [ngClass]="p.push_type" tappable (click)="open_notifications(  p.push_type );">{{ p.push_title }}</span>  
+	    <ion-icon color="danger" name="md-close-circle" item-end tappable (click)="remove_notifiation( p.pid );"></ion-icon>
+  </ion-item>
+  
+</ion-list>
+
+<br/>
+<div id="provider_logo"> 
+	<img *ngIf="provider_logo != '' && provider_logo != 'undefined' && provider_logo !== undefined " src="{{provider_image_path}}/{{provider_logo}}"/> 
+</div> 
+<br/><br/> 
+
+<div class="text_block">
+	 
+	<div text-center class="big_icons" tappable *ngFor=" let menu of homepage_menu "   (click)="open_page( menu.menu_link , menu.menu_type );"> 
+				<div> <ion-icon name="{{ menu.menu_icon }}" color="light"></ion-icon><br/> {{ menu.menu_title }} </div> 
+	</div> 
+	
+
+</div>	  
+ 
+</ion-content>

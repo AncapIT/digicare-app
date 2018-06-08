@@ -1,0 +1,37 @@
+page-home {
+	 
+	ion-navbar { height: 75px;   }
+	
+	.toolbar-background {     
+		  
+	    display: block;
+	    @include blue_gradient();
+    }
+    
+    #icon_menu { 
+	    width: 35px;
+		height: 35px;
+    } 
+	
+	#ava_btn  
+	 {  height: 50px; line-height: 50px;   }
+	
+	#ava_pic { 
+		width: 40px; height: 40px; border: #FFF 1px solid; border-radius: 50%; overflow: hidden; 
+	}
+	#ava_pic img { width: auto; height: 100%;  }
+	
+	ion-title span#subtitle_1 { color: #FFF; font-weight: bold; font-size: 13pt;  }
+	ion-title span#subtitle_2 { color: #c4e7ff; font-size: 10pt; font-weight: normal;  }
+	 
+	ion-icon.red_mini_icons { color: #ea4235;  }
+	span.alert { color: #ea4235;  font-size: 11pt;  }
+	span.black_text, span.news, span.message { color: #000; font-size: 11pt;  }
+	
+	
+	
+	ion-item.white_list_item  {  background-color: rgba(255, 255, 255, 0.5);  margin-top: 4px;   }
+	
+	.list-ios > .item-block:first-child, .list-ios .item-block .item-inner, .item-ios.item-block .item-inner, .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block   {  border: none;  }
+	    	 
+}

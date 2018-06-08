@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{ title }} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    
+     <div class="big_page_icon"><ion-icon name="ios-cog" color="grey" ></ion-icon></div>
+     
+     
+     <ion-list class="transp_gradient">
+ 	<ion-item tappable (click)=" active_tab = '1' ">
+ 	  <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+	  <ion-label>{{ 'settings.personal_data' | translate }} </ion-label>
+	  <ion-icon name="ios-arrow-down" color="grey" item-end></ion-icon>
+	</ion-item>
+	<div class="carelink_item_inner" *ngIf=" active_tab == '1' ">
+		
+		<ion-list>
+			<ion-item>
+			    <ion-input placeholder="{{ 'settings.first_name' | translate }}" [(ngModel)]="first_name"  name="first_name" text-left clearInput></ion-input>
+			</ion-item>
+			<ion-item>
+			    <ion-input placeholder="{{ 'settings.last_name' | translate }}" [(ngModel)]="last_name"  name="last_name" text-left clearInput></ion-input>
+			</ion-item> 
+			<ion-item>
+			    <ion-input placeholder="{{ 'settings.city' | translate }}" [(ngModel)]="city"  name="city" text-left clearInput></ion-input>
+			</ion-item> 
+			<ion-item>
+			    <ion-input placeholder="{{ 'settings.address' | translate }}" [(ngModel)]="address"  name="address" text-left clearInput></ion-input>
+			</ion-item> 
+			<ion-item>
+			    <ion-input placeholder="{{ 'settings.email' | translate }}" [(ngModel)]="email"  name="email" text-left clearInput></ion-input>
+			</ion-item> 
+			<ion-item>
+			    <ion-input placeholder="{{ 'settings.phone' | translate }}" [(ngModel)]="phone"  name="phone" text-left clearInput></ion-input>
+			</ion-item> 
+		</ion-list>
+			
+	</div>
+	  
+	<ion-item tappable (click)=" active_tab = '2'  ">
+	  <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+	  <ion-label>{{ 'settings.language' | translate }}</ion-label>
+	  <ion-icon name="ios-arrow-down" color="grey" item-end></ion-icon>
+	</ion-item>
+	<div class="carelink_item_inner" *ngIf=" active_tab == '2' ">
+		 <ion-list radio-group  [(ngModel)]="selected_lang">
+		  	  <ion-item>
+			    <ion-label>Swedish</ion-label>
+			    <ion-radio value="se" ></ion-radio>
+			  </ion-item> 
+			  <ion-item>
+			    <ion-label >English</ion-label>
+			    <ion-radio value="en"   ></ion-radio>
+			  </ion-item> 
+		 </ion-list>
+	</div>
+	
+	<ion-item tappable (click)=" active_tab = '3' ">
+	  <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+	  <ion-label>{{ 'settings.password' | translate }} </ion-label>
+	  <ion-icon name="ios-arrow-down" color="grey" item-end></ion-icon>
+	</ion-item>
+	<div class="carelink_item_inner" *ngIf=" active_tab == '3' ">
+		  <ion-list>
+			<ion-item>
+			    <ion-input type="password" [(ngModel)]="old_password"  name="old_password" placeholder="{{ 'settings.password_old' | translate }}" text-left clearInput></ion-input>
+			</ion-item>
+			<ion-item>
+			    <ion-input type="password" [(ngModel)]="new_password"  name="new_password" placeholder="{{ 'settings.password_new' | translate }}" text-left clearInput></ion-input>
+			</ion-item> 
+			<ion-item>
+			    <ion-input type="password" [(ngModel)]="confirm_password"  name="confirm_password"  placeholder="{{ 'settings.password_repeat' | translate }}" text-left clearInput></ion-input>
+			</ion-item> 
+		</ion-list>
+	</div>
+	 
+	<ion-item  tappable (click)=" active_tab = '4' ">
+	  <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+	  <ion-label> {{ 'settings.upload_photo' | translate }}</ion-label>
+	  <ion-icon name="ios-arrow-down" color="grey" item-end></ion-icon>
+	</ion-item>
+	<div class="carelink_item_inner" *ngIf=" active_tab == '4' ">
+		  
+		<div class="gallery-button" *ngIf="isApp"  on-tap="openGallery();" text-center> 
+			<img src="{{user_image_path}}/{{patient_photo}}"/> <br>
+		    <ion-icon name="camera" id="camera_icon"></ion-icon>
+		   <p>{{ 'settings.choose_photo' | translate }} </p> <br/><br/>
+		</div>
+		
+		<div class="gallery-button" *ngIf="!isApp"   text-center> 
+			<label>
+		    <img src="{{user_image_path}}/{{patient_photo}}"/> <br>
+			<ion-icon name="camera" id="camera_icon"></ion-icon>
+		    <input type="file" (change)="fileChanged($event)" name="file" accept="image/jpg">
+		    </label>
+		    <br/><br/>
+		</div> 
+		
+	</div>
+	
+	<ion-item tappable (click)=" active_tab = '5' ">
+	  <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+	  <ion-label>{{ 'settings.payment_info' | translate }} </ion-label>
+	  <ion-icon name="ios-arrow-down" color="grey" item-end></ion-icon>
+	</ion-item> 
+	<div class="carelink_item_inner" *ngIf=" active_tab == '5' ">
+		  Coming soon
+	</div>
+ </ion-list>
+ 
+
+ <button color="secondary" block ion-button tappable (click)="save_profile( );" > {{ 'settings.save_profile' | translate }}  </button>
+ 
+	 
+</ion-content>

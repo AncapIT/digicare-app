@@ -1,0 +1,91 @@
+page-payment {
+	 
+	 p {     text-align: center; font-weight: bold;  } 
+	  
+	 div#pay_icon { width: 100%; text-align: center; display: block; margin-top: 20%;  }
+	 div#pay_icon ion-icon { font-size:  120px; color: #9E9E9E; text-align: center; } 
+	 
+	div#card_block  {    
+		
+		background: rgba(226,226,226,1);
+background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(222,222,222,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(222,222,222,1)));
+background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(222,222,222,1) 100%);
+background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(222,222,222,1) 100%);
+background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(222,222,222,1) 100%);
+background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(222,222,222,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#dedede', GradientType=0 ); 
+
+    padding: 20px;     border-radius: 6px;     } 
+	
+	ion-input { background-color: #FFF;     padding-left: 15px;    border-radius: 4px;  line-height: 27px;  } 
+	input.text-input {  font-size: 13pt;     text-align: center;  }
+	
+	ion-input.input_mini input {   width: calc(100% + 10px);  } 
+	
+	#pay_lock_icon { color: #9e9e9e;  } 
+	#pay_lock_icon  .item-inner {  border-bottom: none;   } 
+	#pay_lock_icon ion-icon { margin-right: 3px; padding-right: 5px;   }
+	#pay_lock_icon ion-label { font-size: 10pt;  text-align: center; }
+	
+	img#visa_mastercard  { width: 150px;
+    margin: auto;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+	} 
+	
+	img#card_system { height: 18px; width: auto; margin-right: 20px;  }
+	
+  button.gradient_blue  {  
+		border-radius: 4px;
+		background: rgba(59,89,153,1);
+		background: -moz-linear-gradient(top, rgba(59,89,153,1) 0%, rgba(31,65,139,1) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(59,89,153,1)), color-stop(100%, rgba(31,65,139,1)));
+		background: -webkit-linear-gradient(top, rgba(59,89,153,1) 0%, rgba(31,65,139,1) 100%);
+		background: -o-linear-gradient(top, rgba(59,89,153,1) 0%, rgba(31,65,139,1) 100%);
+		background: -ms-linear-gradient(top, rgba(59,89,153,1) 0%, rgba(31,65,139,1) 100%);
+		background: linear-gradient(to bottom, rgba(59,89,153,1) 0%, rgba(31,65,139,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b5999', endColorstr='#1f418b', GradientType=0 );
+		height: 50px;
+    }
+   
+   
+ button.gradient_grey  {  
+		border-radius: 4px;
+		background: rgba(210,213,216,1);
+		background: -moz-linear-gradient(top, rgba(210,213,216,1) 0%, rgba(255,255,255,1) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(210,213,216,1)), color-stop(100%, rgba(255,255,255,1)));
+		background: -webkit-linear-gradient(top, rgba(210,213,216,1) 0%, rgba(255,255,255,1) 100%);
+		background: -o-linear-gradient(top, rgba(210,213,216,1) 0%, rgba(255,255,255,1) 100%);
+		background: -ms-linear-gradient(top, rgba(210,213,216,1) 0%, rgba(255,255,255,1) 100%);
+		background: linear-gradient(to bottom, rgba(210,213,216,1) 0%, rgba(255,255,255,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2d5d8', endColorstr='#ffffff', GradientType=0 );
+		color: #000;
+	    height: 50px;	 
+  }
+  
+  
+  div#success_block ion-icon { 
+	  color: #01b5ff;
+    font-size: 175pt;
+    margin: auto;
+    display: block;
+    width: 100%;
+    display: block;
+    text-align: center;
+      }
+      
+      
+    div#error_block ion-icon { 
+	color: #f00;
+    font-size: 145pt;
+    margin: auto;
+    display: block;
+    width: 100%;
+    display: block;
+    text-align: center;
+      }  
+      
+	
+}

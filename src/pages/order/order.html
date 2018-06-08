@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+     
+     <ion-buttons start>
+      <button ion-button icon-only class="topbar_back_btn" tappable (click)="backRoute();">
+      	<ion-icon name="ios-arrow-dropleft" color="grey"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title> {{ title }} </ion-title>
+       
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle color="grey" class="topbar_menu_btn">
+        <ion-icon name="carelink-menu" ></ion-icon>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	<div class="text_block">  {{ page_info }} </div> <hr/> <br/>
+		
+	 <ion-list class="transp_gradient">
+	 	
+	 	
+	 	<!-- ----------------------------------- PRODUCT ITEMS -------------------------------------> 
+	 	<div  *ngFor="let item of items;  let idx = index">
+		 	
+		 	<h3> {{ item.title }}</h3>
+		 	 
+			<div class="text_block"  *ngIf="item.description" > {{ item.description }} </div>
+			
+			<ion-item *ngIf=" item.item_type == 'text' ">
+				<ion-label>{{ item.title }}</ion-label>
+			    <ion-input type="text" value="" [(ngModel)]="user_data[ item.item_id ]" placeholder="{{ item.title }}"  text-left clearInput></ion-input>
+			</ion-item>
+			
+			<ion-item *ngIf=" item.item_type == 'datetime' ">
+		 	  <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+			  <ion-label>Date <i>*</i></ion-label>
+			  <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="user_data[ item.item_id ]"  min="{{tomorrow}}" max="2030-12-31"  placeholder="{{tomorrow}}" ></ion-datetime>
+			</ion-item>
+			 
+			<ion-item *ngIf=" item.item_type == 'datetime' ">
+			  <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+			  <ion-label>Time <i>*</i></ion-label>
+			  <ion-datetime displayFormat="HH:mm" [(ngModel)]="user_data[ item.item_id ]"  placeholder="00:00" ></ion-datetime>
+			</ion-item>
+			
+			<ion-list radio-group class="transp_gradient food_menu_day" color="secondary" [(ngModel)]="user_data[ item.item_id ]" >
+			    <ion-item  *ngFor="let select of choices[ item.item_id ] " >  
+				    <ion-icon name="md-square" item-start color="secondary" class="list_icon"></ion-icon>
+				    <ion-label>{{ select.title }} </ion-label>
+				    <ion-radio checked="false" value="{{ select.prod_item_choices_id }}"  ></ion-radio>
+				     <ion-icon *ngIf=" select.price > 0 " name="" item-end class="black_text" >
+				    		<span *ngIf=" currency_place == 'before' " class="currency">{{ currency }} {{ select.price }}</span>
+				    		<span *ngIf=" currency_place == 'after' " class="currency">{{ select.price }} {{ currency }}</span>	
+				     </ion-icon>
+				  </ion-item>
+			 </ion-list>
+
+	 	</div>
+		
+	 </ion-list>	 
+ 
+	 <button color="secondary" block ion-button tappable (click)="next_step();" >
+			{{ 'all_pages.next_step' | translate }}	 
+	 </button>
+	 <button color="danger" block ion-button tappable *ngIf=" 1 == 2 " (click)="cancel_order();" >
+			{{ 'order.cancel_order' | translate }} 	 
+	 </button> 
+	 
+</ion-content>
